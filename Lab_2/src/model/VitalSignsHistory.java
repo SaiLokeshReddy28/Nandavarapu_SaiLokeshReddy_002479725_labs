@@ -26,7 +26,7 @@ public class VitalSignsHistory {
     }
     
     //method to remove a Vital Sign
-    public void removeVitalSigns(VitalSigns vs){
+    public void removeVitals(VitalSigns vs){
         history.remove(vs);
     }
     
