@@ -43,6 +43,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        btnAccountMng.setBackground(new java.awt.Color(153, 153, 255));
         btnAccountMng.setText("Open Account Manager Work Area");
         btnAccountMng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,10 +145,10 @@ public class MainJFrame extends javax.swing.JFrame {
         newAccount.setBankName("Bank of America");
         newAccount.setBalance(3200);
         
-        Account anotherAccount = accountDirectory.addAccount();
-        newAccount.setAccountNumber("543267886");
-        newAccount.setRoutingNumber("724624644");
-        newAccount.setBankName("Chase");
-        newAccount.setBalance(1700);
+        Account newAccount2 = accountDirectory.addAccount();
+        newAccount2.setAccountNumber("543267886");
+        newAccount2.setRoutingNumber("724624644");
+        newAccount2.setBankName("Chase");
+        newAccount2.setBalance(1700);
     }
 }

@@ -41,6 +41,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnCreateAccount">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Create Account"/>
       </Properties>
       <Events>
@@ -49,6 +52,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnManageAccount">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Manage Account"/>
       </Properties>
       <Events>

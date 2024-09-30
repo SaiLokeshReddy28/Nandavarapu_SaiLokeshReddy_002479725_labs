@@ -48,6 +48,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         lblRoutingNumber = new javax.swing.JLabel();
         txtRoutingNumber = new javax.swing.JTextField();
 
+        btnBack.setBackground(new java.awt.Color(255, 204, 153));
         btnBack.setText("<<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +56,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblCreateAccount.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCreateAccount.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblCreateAccount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateAccount.setText("Create Account");
 
@@ -86,6 +87,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateAccount.setBackground(new java.awt.Color(204, 204, 255));
         btnCreateAccount.setText("Create Account");
         btnCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,6 +204,13 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         a.setAccountNumber(accountNumber); 
         a.setBankName(bankName); 
         a.setBalance(balance); 
+        
+        JOptionPane.showMessageDialog(this, "Account successfully created.", "Information", JOptionPane.INFORMATION_MESSAGE);
+        
+        txtRoutingNumber.setText("");
+        txtAccountNumber.setText("");
+        txtBankName.setText("");
+        txtBalance.setText("");
     }//GEN-LAST:event_btnCreateAccountActionPerformed
 
     private void txtRoutingNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRoutingNumberActionPerformed
