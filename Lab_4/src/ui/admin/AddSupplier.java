@@ -46,7 +46,12 @@ public class AddSupplier extends javax.swing.JPanel {
         initComponents();
         this.workArea = workArea;
         this.supplierDirectory = supplierDirectory;
+        FileFilter jpegFilter = new FileNameExtensionFilter("JPEG file", "jpg", "jpeg");
+        FileFilter pngFilter = new FileNameExtensionFilter("PNG file", "png", "png");
         
+        fileChooser.addChoosableFileFilter(jpegFilter);
+        fileChooser.addChoosableFileFilter(pngFilter);
+        fileChooser.setFileFilter(pngFilter);
     
     }
 

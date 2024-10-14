@@ -10,6 +10,7 @@ import java.awt.CardLayout;
 import java.util.Optional;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import model.ProductCatalog;
 
 
 
@@ -104,15 +105,15 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:
-        String id = idField.getText();
-        Integer.valueOf(id);
-        if(id.equals(""))
+        String id = idField.getText().trim();
+        Integer idn = Integer.valueOf(id);
+        if(id.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Please enter some value");
         }
-        for(Product product:supplier.getProductCatalog())
+        for(Product product:supplier.getProductCatalog().getProductCatalog())
         {
-            if(product.getId()==Integer.parseInt(id))
+            if(product.getId()==idn)
             {
                 ViewProductDetailJPanel vpdjp = new ViewProductDetailJPanel(workArea, product);
                 workArea.add("ViewProductDetailJPanelSupplier",vpdjp);

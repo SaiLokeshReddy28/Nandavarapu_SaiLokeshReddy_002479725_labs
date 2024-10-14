@@ -14,7 +14,7 @@ import model.Feature;
 
 /**
  *
- * @author sailokeshreddynandavarapu
+ * @author Rushabh
  */
 public class ViewProductDetailJPanel extends javax.swing.JPanel {
 
@@ -58,7 +58,6 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         tblFeatures = new javax.swing.JTable();
         btnAddFeature = new javax.swing.JButton();
         btnRemoveFeature = new javax.swing.JButton();
-        logoImg = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -128,45 +127,39 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
             }
         });
 
-        logoImg.setText("<< No Image >>");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnAddFeature)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnRemoveFeature)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnUpdate)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnSave))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(backButton1)
-                            .addGap(38, 38, 38)
-                            .addComponent(lblTitle))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(lblName)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblId)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblPrice)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88)
-                        .addComponent(logoImg)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addComponent(btnAddFeature)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRemoveFeature)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUpdate)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSave))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(backButton1)
+                        .addGap(38, 38, 38)
+                        .addComponent(lblTitle))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(lblName)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblId)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPrice)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtId, txtName});
@@ -180,27 +173,22 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTitle)
                     .addComponent(backButton1))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblName)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblId)
-                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPrice))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSave)
-                            .addComponent(btnUpdate)
-                            .addComponent(btnAddFeature)
-                            .addComponent(btnRemoveFeature)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(logoImg)))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblName)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblId)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrice))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSave)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnAddFeature)
+                    .addComponent(btnRemoveFeature))
                 .addContainerGap(234, Short.MAX_VALUE))
         );
 
@@ -229,8 +217,13 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         workArea.remove(this);
         Component[] componentArray = workArea.getComponents();
         Component component = componentArray[componentArray.length - 1];
+         if (component instanceof ManageProductCatalogJPanel) {
         ManageProductCatalogJPanel manageProductCatalogJPanel = (ManageProductCatalogJPanel) component;
-        manageProductCatalogJPanel.refreshTable();
+        manageProductCatalogJPanel.refreshTable(); // Safe to call refreshTable
+    } else if (component instanceof SearchForProductJPanel) {
+        SearchForProductJPanel searchForProductJPanel = (SearchForProductJPanel) component;
+    }
+       
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.previous(workArea);
     }
@@ -241,6 +234,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         product.setName(txtName.getText());
         saveFeatures();
         
+        
         txtName.setEditable(false);
         txtPrice.setEditable(false);
         btnSave.setEnabled(false);
@@ -248,62 +242,68 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         btnAddFeature.setEnabled(false);
         btnRemoveFeature.setEnabled(false);
         
-        JOptionPane.showMessageDialog(this, "Product Information Saved", "Information", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Product information saved", "Information", JOptionPane.INFORMATION_MESSAGE);
         
         refreshTable();
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void saveFeatures() {
-       DefaultTableModel model = (DefaultTableModel) tblFeatures.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblFeatures.getModel();
+        
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Feature currentFeature = product.getFeatures().get(i);
+            currentFeature.setName(tblFeatures.getValueAt(i, 0).toString());
+            currentFeature.setValue(tblFeatures.getValueAt(i, 1));
+        }
        
-       for(int i =0 ; i <model.getRowCount(); i++){
-           Feature currentFeature = product.getFeatures().get(i);
-           currentFeature.setName(tblFeatures.getValueAt(i, 0).toString());
-           currentFeature.setValue(tblFeatures.getValueAt(i, 1).toString());
-       }
     }
 
     private void btnAddFeatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddFeatureActionPerformed
         // TODO add your handling code here:
-        Feature newFeature = product.addNewFeature();
-        newFeature.setName("New Feature");
-        newFeature.setValue("Type Value Here");
-        
+        // Define the feature name and value
+        // Assuming this is in the appropriate method in ViewProductDetailJPanel
+        String featureName = "New Feature"; // Example feature name
+        Object featureValue = "Type Value Here"; // Example feature value
+
+        // Now call the method with the correct parameters
+        Feature newFeature = product.addNewFeature(featureName, featureValue);
+
         saveFeatures();
+        
         refreshTable();
 
-    
+        
+       
     }//GEN-LAST:event_btnAddFeatureActionPerformed
 
     private void btnRemoveFeatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveFeatureActionPerformed
         // TODO add your handling code here:
-int selectedRow = tblFeatures.getSelectedRow();
-if(selectedRow < 0){
-    JOptionPane.showMessageDialog(this, "Please select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
-    return;
-}
-       product.getFeatures().remove(selectedRow);
-       refreshTable();
+        
+        saveFeatures();
+        
+        int selectedRow = tblFeatures.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        product.getFeatures().remove(selectedRow);
+        refreshTable();
+
+       
     }//GEN-LAST:event_btnRemoveFeatureActionPerformed
 
     public void refreshTable() {
-
+        
         DefaultTableModel model = (DefaultTableModel) tblFeatures.getModel();
         model.setRowCount(0);
         
-        for(Feature f : product.getFeatures()){
+        
+        for (Feature f : product.getFeatures()) {
             Object row[] = new Object[2];
-            row[0] =f.getName();
-            row[1] = f.getValue() == null ? "" : f.getValue();
+            row[0] = f;
+            row[1] = f.getValue() == null ? "Empty" : f.getValue().toString();
             model.addRow(row);
-        }
-        if(product.getLogoImage()!=null)
-        {
-            logoImg.setIcon(product.getLogoImage());
-        }
-        else
-        {
-            logoImg.setText("");
         }
     }
 
@@ -319,7 +319,6 @@ if(selectedRow < 0){
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel logoImg;
     private javax.swing.JTable tblFeatures;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;

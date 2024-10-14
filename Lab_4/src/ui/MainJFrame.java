@@ -6,6 +6,8 @@
 package ui;
 
 import java.awt.CardLayout;
+import javax.swing.JTable;
+import model.ProductCatalog;
 import model.Supplier;
 import model.SupplierDirectory;
 
@@ -16,17 +18,18 @@ import model.SupplierDirectory;
 public class MainJFrame extends javax.swing.JFrame {
 
     SupplierDirectory supplierDirectory;
-    
+    private ProductCatalog productCatalog; // Declare the ProductCatalog
+    private JTable productTable; // Declare your JTable for displaying products
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
-        
+        productCatalog = new ProductCatalog(); // Initialize the ProductCatalog
         supplierDirectory = new SupplierDirectory();
         setSize(800,600);
         setResizable(false);
-       
+        populateDemoData();
         
         setLoginScreen();
     
@@ -109,6 +112,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private void populateDemoData(){
         Supplier bestBuy = supplierDirectory.addSupplier();
         bestBuy.setSupplyName("Best Buy");
+        
+        Supplier mustBuy = supplierDirectory.addSupplier();
+        mustBuy.setSupplyName("Must Buy");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -28,7 +28,8 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         initComponents();
         this.workArea = workArea;
         this.supplier = supplier;
-       
+        if (supplier.getLogoImage() != null) imgLogo.setIcon(supplier.getLogoImage());
+        else imgLogo.setText("No Logo");
         refreshTable();
     }
 
