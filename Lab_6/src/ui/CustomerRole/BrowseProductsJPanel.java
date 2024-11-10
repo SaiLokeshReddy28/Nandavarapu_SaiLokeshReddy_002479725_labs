@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import model.MasterOrderList;
 
 
 /**
@@ -21,9 +22,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Rushabh
  */
 public class BrowseProductsJPanel extends javax.swing.JPanel {
+    JPanel userProcessContainer;
+    SupplierDirectory supplierDirectory;
+    MasterOrderList masterOrderList;
 
     /** Creates new form BrowseProducts */
-    public BrowseProductsJPanel() {
+    public BrowseProductsJPanel(JPanel userProcessContainer, SupplierDirectory supplierDirectory,MasterOrderList masterOrderList) {
         initComponents();
       
     }
