@@ -19,17 +19,16 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewOrderItemDetailJPanel
      */
-    public ViewOrderItemDetailJPanel(JPanel userProcessContainer,OrderItem item) {
+    public ViewOrderItemDetailJPanel(JPanel userProcessContainer, OrderItem item) {
         initComponents();
-        this.userProcessContainer=userProcessContainer;
-        this.item=item;
+        this.userProcessContainer = userProcessContainer;
+        this.item = item;
         
         txtProductName.setText(item.getProduct().getProdName());
-        txtProductId.setText(String.valueOf(item.getProduct().getModelNumber()));
+        txtProductId.setText (String.valueOf(item.getProduct().getModelNumber()));
         txtSalesPrice.setText(String.valueOf(item.getSalesPrice()));
         txtQuantity.setText(String.valueOf(item.getQuantity()));
-        txtTotal.setText(String.valueOf(item.getQuantity()*item.getSalesPrice()));
-        
+        txtTotal.setText (String.valueOf(item.getQuantity() * item.getSalesPrice()));
     }
 
     /**
@@ -157,6 +156,7 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

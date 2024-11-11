@@ -6,11 +6,18 @@ package model;
 
 /**
  *
- * @author sailokeshreddynandavarapu
+ * @author manasvini
  */
 public class Business {
+    
     MasterOrderList masterOrderList;
     SupplierDirectory supplierDirectory;
+
+    public Business() {
+        
+        masterOrderList = new MasterOrderList();
+        supplierDirectory = new SupplierDirectory();
+    }
 
     public MasterOrderList getMasterOrderList() {
         return masterOrderList;
@@ -27,9 +34,11 @@ public class Business {
     public void setSupplierDirectory(SupplierDirectory supplierDirectory) {
         this.supplierDirectory = supplierDirectory;
     }
+
+   
     
-    public Business(){
-       masterOrderList = new MasterOrderList();
-       supplierDirectory = new SupplierDirectory();
-    }
+    
+    
+    
+    
 }

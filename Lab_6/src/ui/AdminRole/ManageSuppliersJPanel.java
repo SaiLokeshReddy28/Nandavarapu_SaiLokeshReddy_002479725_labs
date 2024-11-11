@@ -3,9 +3,11 @@ package ui.AdminRole;
 import model.Supplier;
 import model.SupplierDirectory;
 import java.awt.CardLayout;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import model.Product;
 
 /**
  *
@@ -29,8 +31,12 @@ public class ManageSuppliersJPanel extends javax.swing.JPanel {
             model.removeRow(i);
         }
         for (Supplier s : supplierDirectory.getSupplierlist()) {
-            Object row[] = new Object[1];
+            List<Product> x = s.getProductCatalog().getProductcatalog();
+            int t = x.size();
+            Object row[] = new Object[2];
             row[0] = s;
+            row[1] = t;
+            
             model.addRow(row);
         }
     }

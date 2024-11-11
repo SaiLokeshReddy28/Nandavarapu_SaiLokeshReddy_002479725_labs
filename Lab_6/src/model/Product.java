@@ -52,6 +52,8 @@ public class Product {
         this.avail = avail;
     }
 
+    
+
     public int getModelNumber() {
         return modelNumber;
     }

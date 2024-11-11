@@ -15,21 +15,22 @@ import javax.swing.JPanel;
  * @author Rushabh
  */
 public class ViewProductDetailJPanel extends javax.swing.JPanel {
-
-
+     
     JPanel userProcessContainer;
     Product product;
+
     /** Creates new form CreateProductJPanel */
     public ViewProductDetailJPanel(JPanel userProcessContainer,Product product) {
         initComponents();
-        this.userProcessContainer=userProcessContainer;
-        this.product=product;
+        
+        this.userProcessContainer = userProcessContainer;
+        this.product = product;
         
         txtProdName.setText(product.getProdName());
-        txtId.setText(String.valueOf(product.getModelNumber()));
+        txtId.setText(String.valueOf(product.getModelNumber ()));
         txtPrice.setText(String.valueOf(product.getPrice()));
         txtAvail.setText(String.valueOf(product.getAvail()));
-               
+        
     }
     
     /** This method is called from within the constructor to
