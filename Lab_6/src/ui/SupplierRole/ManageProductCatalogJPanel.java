@@ -33,11 +33,11 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Product p : supplier.getProductCatalog().getProductcatalog()) {
-            Object row[] = new Object[3];
+            Object row[] = new Object[4];
             row[0] = p;
             row[1] = p.getModelNumber();
             row[2] = p.getPrice();
-            row[3] = p.getAvail();
+            row[3]=p.getAvail();
             model.addRow(row);
         }
     }

@@ -35,7 +35,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblProdAvail = new javax.swing.JLabel();
-        txtAvailability = new javax.swing.JTextField();
+        txtAvail = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(650, 600));
 
@@ -68,7 +68,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         jLabel5.setText("Product Name:");
 
         lblProdAvail.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        lblProdAvail.setText("Product Availabilty:");
+        lblProdAvail.setText("Availability");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -84,10 +84,14 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
                         .addComponent(btnBack)
                         .addGap(132, 132, 132)
                         .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(260, 265, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblProdAvail)
+                        .addGap(31, 31, 31)
+                        .addComponent(txtAvail, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -98,16 +102,9 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
                             .addComponent(txtPrice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblProdAvail)
-                        .addGap(31, 31, 31)
-                        .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(269, 269, 269))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtAvailability, txtId, txtName, txtPrice});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -133,7 +130,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAvail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblProdAvail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addComponent(btnAdd)
@@ -142,24 +139,24 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtId, txtName, txtPrice});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel2, jLabel3, jLabel5, lblProdAvail});
-
     }// </editor-fold>//GEN-END:initComponents
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        double price = 0.0;
-        int quantity = 0;
+
+        double price=0.0;
+        int quantity=0;
+                
         try{
-            price = Double.parseDouble(txtPrice.getText());
-            quantity = Integer.parseInt(txtAvailability.getText());
-            
-        } catch (Exception e ){
-             JOptionPane.showMessageDialog(this, "Please check the price and quantity formats", "Info", JOptionPane.INFORMATION_MESSAGE);
-             return;
+            price= Double.parseDouble(txtPrice.getText());
+            quantity=Integer.parseInt(txtAvail.getText());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the price and the quantity formats", "Info", JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
         Product p = supplier.getProductCatalog().addProduct();
         p.setProdName(txtName.getText());
         p.setPrice(price);
         p.setAvail(quantity);
+       
         JOptionPane.showMessageDialog(null, "Product added!", "Info", JOptionPane.INFORMATION_MESSAGE);
 }//GEN-LAST:event_btnAddActionPerformed
 
@@ -182,7 +179,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblProdAvail;
-    private javax.swing.JTextField txtAvailability;
+    private javax.swing.JTextField txtAvail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;

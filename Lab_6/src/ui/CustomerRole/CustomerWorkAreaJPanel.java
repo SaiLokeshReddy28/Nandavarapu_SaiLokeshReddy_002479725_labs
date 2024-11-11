@@ -8,6 +8,7 @@ package ui.CustomerRole;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import model.MasterOrderList;
+import model.Order;
 import model.SupplierDirectory;
 
 
@@ -22,16 +23,19 @@ import model.SupplierDirectory;
  */
 public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
+
     JPanel userProcessContainer;
     SupplierDirectory supplierDirectory;
     MasterOrderList masterOrderList;
+    Order currentOrder;
 
     /** Creates new form ProductManagerWorkAreaJPanel */
-    public CustomerWorkAreaJPanel(JPanel userProcessContainer, SupplierDirectory supplierDirectory,MasterOrderList masterOrderList) {
+    public CustomerWorkAreaJPanel(JPanel userProcessContainer,SupplierDirectory supplierDirectory,MasterOrderList masterOrderList,Order currentOrder) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.supplierDirectory = supplierDirectory;
-        this.masterOrderList = masterOrderList;
+        this.userProcessContainer=userProcessContainer;
+        this.supplierDirectory=supplierDirectory;
+        this.masterOrderList=masterOrderList;
+        this.currentOrder=currentOrder;
     }
 
     /** This method is called from within the constructor to
@@ -86,8 +90,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     private void btnBrowseCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseCatalogActionPerformed
         // TODO add your handling code here:
-        BrowseProductsJPanel bpjp = new BrowseProductsJPanel(userProcessContainer, supplierDirectory, masterOrderList);
-        userProcessContainer.add("BrowseProductsJPanel", bpjp);
+        BrowseProductsJPanel bp = new BrowseProductsJPanel(userProcessContainer, supplierDirectory,masterOrderList,currentOrder);
+        userProcessContainer.add("BrowseProductsJPanel", bp);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnBrowseCatalogActionPerformed
