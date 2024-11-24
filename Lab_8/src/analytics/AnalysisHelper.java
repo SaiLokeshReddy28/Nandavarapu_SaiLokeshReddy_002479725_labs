@@ -83,4 +83,24 @@ public class AnalysisHelper {
             System.out.println(users.get(i)+"Q4 - Post count: " + postNumbers.get(users.get(i).getId()));
         }
     }
+    
+    public void getPassiveCommentUsers() {
+        DataStore data = DataStore.getInstance();
+        HashMap<Integer, Integer> commentNumbers = new HashMap<Integer, Integer>();
+        for (Comment c : data.getComments().values()) {
+            int userId = c.getUserId();
+            if (commentNumbers.containsKey(userId)) {
+                commentNumbers.put(userId, commentNumbers.get(userId) + 1);
+            } else {
+                commentNumbers.put(userId, 1);
+            }
+        }
+        ArrayList<User> users = new ArrayList(data.getUsers().values());
+        Collections.sort(users, new UserMapComparator(commentNumbers));
+        System.out.println("Q4 - The following users have the least commens: ");
+        
+        for (int i =0; i<5; i++){
+            System.out.println(users.get(i)+"Q5 - Comment count: " + commentNumbers.get(users.get(i).getId()));
+        }
+    }
 }
