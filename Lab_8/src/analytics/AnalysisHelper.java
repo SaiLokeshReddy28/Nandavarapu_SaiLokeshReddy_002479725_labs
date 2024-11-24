@@ -10,8 +10,13 @@ package analytics;
  * @author harshalneelkamal
  */
 import data.DataStore;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import model.Comment;
+import model.Post;
+import model.User;
 
 public class AnalysisHelper {
 
@@ -43,5 +48,39 @@ public class AnalysisHelper {
         }
         int postId = commentWithMaxLikes.getPostId();
         System.out.println("Q2 - post with most likes per comment " + data.getPosts().get(postId).toString());
+    }
+
+    public void getPostwithMostComments() {
+        DataStore data = DataStore.getInstance();
+        Post postWithMostComments = null;
+        for (Post p : data.getPosts().values()) {
+            if (postWithMostComments == null) {
+                postWithMostComments = p;
+            }
+            if (p.getComments().size() > postWithMostComments.getComments().size()) {
+                postWithMostComments = p;
+            }
+        }
+        System.out.println("Q3 - post with most comments " + postWithMostComments.toString());
+    }
+
+    public void getPassiveUsers() {
+        DataStore data = DataStore.getInstance();
+        HashMap<Integer, Integer> postNumbers = new HashMap<Integer, Integer>();
+        for (Post p : data.getPosts().values()) {
+            int userId = p.getUserId();
+            if (postNumbers.containsKey(userId)) {
+                postNumbers.put(userId, postNumbers.get(userId) + 1);
+            } else {
+                postNumbers.put(userId, 1);
+            }
+        }
+        ArrayList<User> users = new ArrayList(data.getUsers().values());
+        Collections.sort(users, new UserMapComparator(postNumbers));
+        System.out.println("Q4 - The following users have the least posts:");
+        
+        for (int i =0; i<5; i++){
+            System.out.println(users.get(i)+"Q4 - Post count: " + postNumbers.get(users.get(i).getId()));
+        }
     }
 }
